@@ -21,3 +21,30 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
+
+let itemTemplate = '';
+let thumpTemplate = '';
+    
+    // <div class="thumb active">
+    //     <img src="./img/01.jpg" alt="">
+    // </div>
+
+    
+    //items-container
+    //thumbs-container
+
+    //.next .fa-circle-chevron-down
+    //.prev .fa-circle-chevron-up
+    //active
+
+
+for(let i = 0; i < items.length; i++){
+    itemTemplate += `
+        <div class="item active">
+           <img src="${items[i]}">
+            <div class="title">
+                <h2>${title[i]}</h2>
+                <p>${text[i]}</p>
+            </div>
+        </div>`;
+}
