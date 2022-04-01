@@ -23,11 +23,9 @@ const text = [
 ]
 
 let itemTemplate = '';
-let thumpTemplate = '';
+let thumbTemplate = '';
     
-    // <div class="thumb active">
-    //     <img src="./img/01.jpg" alt="">
-    // </div>
+  
 
     
     //items-container
@@ -39,25 +37,33 @@ let thumpTemplate = '';
 let currentIndexActive = 0;
 
 for(let i = 0; i < items.length; i++){
-    let classActive = 'item';
-    if(i === urrentIndexActive ) {
-        classActive = "item active";
+    let classActive = '';
+    
+    if(i === currentIndexActive ) {
+        classActive = "active";
     }
     itemTemplate += `
-        <div class="item">
+        <div class="item ${classActive}">
            <img src="${items[i]}">
             <div class="title">
                 <h2>${title[i]}</h2>
                 <p>${text[i]}</p>
             </div>
         </div>`;
+    
+    thumbTemplate += `
+        <div class="thumb ${classActive}">
+            <img src="${items[i]}" alt="">
+        </div>
+    `;
 
 //console.log(itemTemplate);
 }
 
+//console.log(thumpTemplate);
 //console.log(itemTemplate);
 const itemContainer = document.querySelector(".items-container");
+const thumbsContainer = document.querySelector(".thumbs-container");
 //console.log(itemContainer);
 itemContainer.innerHTML = itemTemplate;
-let firstItem = document.querySelector(".item");
-firstItem.classList.add("active");
+thumbsContainer.innerHTML += thumbTemplate;
